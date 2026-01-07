@@ -1,6 +1,8 @@
 {
-  "/api": {
-    "target": "https://api.freeprojectapi.com/api/LeaveTracker/CreateEmployee",
-    "secure": false
+  "/*": {
+    "target": "http://localhost:5100",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
   }
 }

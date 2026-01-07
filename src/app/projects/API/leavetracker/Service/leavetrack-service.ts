@@ -31,4 +31,9 @@ export class LeavetrackService {
   updateEmployee(empData: EmpEntity) {
     return this.http.put(`https://api.freeprojectapi.com/api/LeaveTracker/UpdateEmployee?id=${empData.empId}`, empData);
   }
+
+  deleteEmployee(empId: number) {
+    return this.http.delete(`https://api.freeprojectapi.com/api/LeaveTracker/DeleteEmployee?id=${empId}`);
+  }
+  
 }

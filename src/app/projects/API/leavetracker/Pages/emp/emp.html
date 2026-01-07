@@ -31,7 +31,8 @@
                                 <td>
                                     <button class="btn btn-sm btn-warning"
                                         (click)="getEmployeeById(e.empId)">Edit</button>
-                                    <button class="btn btn-sm btn-danger">Delete</button>
+                                    <button class="btn btn-sm btn-danger"
+                                        (click)="deleteEmployee(e.empId)">Delete</button>
                                 </td>
                             </tr>
                             }
@@ -50,12 +51,12 @@
 
                 <div class="card-body bg-light">
                     <form [formGroup]="empFormGrp">
-                        @if (empIdReadOnly()) {
-                        <div class="mb-2">
+                        @if (empIdShow()) {
+                        <div class="mb-2" aria-disabled="true">
                             <label class="form-label">Employee ID</label>
-                            <input type="text" class="form-control" formControlName="empId" >
+                            <input type="text" class="form-control" formControlName="empId" readonly>
                         </div>
-                    }
+                        }
                         <div class="mb-2">
                             <label class="form-label">Employee Name</label>
                             <input type="text" class="form-control" formControlName="empName">
@@ -108,8 +109,11 @@
                         </div>
 
                         <div class="d-grid gap-2">
-                            <button class="btn btn-success" (click)="createEmployee()">Create</button>
+                            @if (empIdShow()) {
                             <button class="btn btn-primary" (click)="updateEmployee()">Update</button>
+                            }@else{
+                            <button class="btn btn-success" (click)="createEmployee()">Create</button>
+                            }
                             <button class="btn btn-secondary" (click)="clearForm()">Clear</button>
                         </div>
                     </form>
