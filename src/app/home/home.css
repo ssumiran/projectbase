@@ -1,24 +1,11 @@
-
-
-
-
 :root {
-            --nav-bg: #611d1d;
-            --text: #0e0c0c;
+            --nav-bg: #1a1a1a;
+            --text: #ffffff;
             --accent: #e67e22;
         }
 
-        
-.header {
-    width: 100%;
-    height: 60px;
-    background-color: #4682B4;
-    color: white;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; }
+
         .navbar {
             background: var(--nav-bg);
             padding: 1rem 2rem;
@@ -28,9 +15,26 @@
             position: relative;
         }
 
-        .logo { color: rgb(255, 255, 255); font-weight: bold; font-size: 1.5rem; text-decoration: none; }
+        .logo { color: white; font-weight: bold; font-size: 1.5rem; text-decoration: none; }
 
-        
+        /* The Checkbox Hack - Hidden */
+        #menu-toggle { display: none; }
+
+        /* Hamburger Icon */
+        .hamburger {
+            display: none; /* Hidden on desktop */
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
 
         /* Nav Links */
         .nav-links {

@@ -1,0 +1,92 @@
+<div class="container-fluid py-4">
+    <!-- ================= FORM SECTION ================= -->
+    <div class="card col-md-6 shadow-lg">
+        <div class="card-header form-card-header">
+            Search A Employee
+        </div>
+        <form #FormData="ngForm">
+            <div class="card-body bg-light">
+                <div class="row  mb-3">
+                    <div class="col-md-4 text-sm-end">
+                        <label class="label  ">Employee ID:</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control col-md-2" [(ngModel)]="empId" name="empIdInput" />
+                        @if (isIdEmpty()) {
+                        <label class="text-danger bold">Employee ID cannot be empty.</label>
+                        }
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 text-md-end mb-2">
+                        <button class="btn btn-secondary btn-sm " (click)="clearForm()">Clear</button>
+                    </div>
+                    <div class="col-md-6 mb-2 ">
+                        <button class="btn btn-success btn-sm" (click)="searchEmpById(empId)">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- ================= TABLE SECTION ================= -->
+    <div class="col-md-12">
+        <div class="card shadow-lg">
+            <div class="card-header table-card-header">
+                A Employee Record
+            </div>
+
+            <div class="card-body bg-light">
+                <table class="table table-bordered table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Designation</th>
+                            <th>Paid Leave Avai</th>
+                            <th>Paid Leave Taken</th>
+                            <th>Sick Leave Avai</th>
+                            <th>Sick Leave Taken</th>
+                            <th>Total Leave Avai</th>
+                            <th>Total Leave Taken</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            @if(empLeaveObj().empId > 0) {
+                            <td>{{empLeaveObj().empId}}</td>
+                            <td>{{empLeaveObj().empName}}</td>
+                            <td>{{empLeaveObj().department}}</td>
+                            <td>{{empLeaveObj().designation}}</td>
+                            <td>{{empLeaveObj().leaveSummary.paidLeave.available}}</td>
+                            <td>{{empLeaveObj().leaveSummary.paidLeave.taken}}</td>
+                            <td>{{empLeaveObj().leaveSummary.sickLeave.available}}</td>
+                            <td>{{empLeaveObj().leaveSummary.sickLeave.taken}}</td>
+                            <td>{{empLeaveObj().leaveSummary.total.totalAvailable}}</td>
+                            <td>{{empLeaveObj().leaveSummary.total.totalTaken}}</td>
+                            }@else {
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            }
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

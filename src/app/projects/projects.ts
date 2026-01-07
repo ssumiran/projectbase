@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { Simplemath } from './simplemath/simplemath';
 
 
 @Component({

@@ -1,6 +1,6 @@
-<div class="container-fluid row">
+<div class="container-fluid">
 
-    <!-- side-nav -->
+    <!-- side-nav --> <!--
     <nav class="col-md-3 col-lg-2 d-md-block bg-dark text-white side-nav collapse" id="sidebarMenu"
         style="width:200px;">
         <div class="position-sticky pt-3">
@@ -41,7 +41,7 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </nav -->
 
 
     <!-- Top Navbar (toggle button for mobile) 
@@ -55,8 +55,94 @@
     </nav>
     -->
 
-    <!-- Main Content -->
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
-        <router-outlet />
-    </main>
+
+    <div class="header container-fluid">
+
+        <nav class="navbar container-fluid">
+            <div class="col-4">
+            <a href="#" class="logo">SUMIRAN SURIADI</a>
+</div>
+            <!-- <input type="checkbox" id="menu-toggle"> -->
+
+            <!-- <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label> -->
+            <div class="col-8 text-align-center">
+            <ul class="nav-links flex-container ">
+                <li class="nav-item">
+                    <a routerLink="Home" class="nav-link text-white active" aria-current="page" href="#">
+                        <span class="me-2"></span> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="Projects" class="nav-link text-white active" aria-current="page" href="#">
+                        <span class="me-2"></span> Projects
+                    </a>
+
+                </li>
+                <li class="nav-item">
+                    <a routerLink="Skills" class="nav-link text-white active" aria-current="page" href="#">
+                        <span class="me-2"></span> Skills
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="Contact" class="nav-link text-white active" aria-current="page" href="#">
+                        <span class="me-2"></span> Contact
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="Miscellaneous" class="nav-link text-white active" aria-current="page" href="#">
+                        <span class="me-2"></span> Miscellaneous
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="About" class="nav-link text-white active" aria-current="page" href="#">
+                        <span class="me-2"></span> About
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Top Navbar (toggle button for mobile) 
+    <nav class="navbar navbar-dark bg-dark d-md-none">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <span class="navbar-brand">Menu</span>
+        </div>
+    </nav>
+    -->
+    <div class="container-fluid">
+        <!-- Main Content -->
+        <!-- <main class="col-md-12 -sm-auto col-lg-10 px-md-4 py-4"> -->
+            <router-outlet />
+        <!-- </main> -->
+    </div>
+    <div class="container-fluid position-sticky bottom-0 bg-dark text-white footer">
+        <hr style="border:0; border-top:1px solid #444; margin:20px 0;">
+        <p style="text-align:center;">Copyright &copy; 2026 Sumiran Suriadi </p>
+    </div>
 </div>

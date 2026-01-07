@@ -1,0 +1,121 @@
+<div class="container-fluid py-4">
+    <div class="row g-4">
+
+        <!-- ================= TABLE SECTION ================= -->
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header table-card-header">
+                    Leave Tracker Records
+                </div>
+
+                <div class="card-body bg-light">
+                    <table class="table table-bordered table-hover align-middle">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Department</th>
+                                <th>Role</th>
+                                <th width="150">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (e of empList(); track e.empId) {
+                            <tr>
+                                <td>{{e.empId}}</td>
+                                <td>{{e.empName}}</td>
+                                <td>{{e.email}}</td>
+                                <td>{{e.deptName}}</td>
+                                <td>{{e.role}}</td>
+                                <td>
+                                    <button class="btn btn-sm btn-warning"
+                                        (click)="getEmployeeById(e.empId)">Edit</button>
+                                    <button class="btn btn-sm btn-danger">Delete</button>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= FORM SECTION ================= -->
+        <div class="col-md-4">
+            <div class="card shadow-lg">
+                <div class="card-header form-card-header">
+                    Employee Form
+                </div>
+
+                <div class="card-body bg-light">
+                    <form [formGroup]="empFormGrp">
+                        @if (empIdReadOnly()) {
+                        <div class="mb-2">
+                            <label class="form-label">Employee ID</label>
+                            <input type="text" class="form-control" formControlName="empId" >
+                        </div>
+                    }
+                        <div class="mb-2">
+                            <label class="form-label">Employee Name</label>
+                            <input type="text" class="form-control" formControlName="empName">
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Contact No</label>
+                            <input type="text" class="form-control" formControlName="contactNo">
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" formControlName="email">
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Department</label>
+                            <input type="text" class="form-control" formControlName="deptName">
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Designation</label>
+                            <input type="text" class="form-control" formControlName="designation">
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Username</label>
+                            <input type="text" class="form-control" formControlName="userName">
+                        </div>
+
+                        <div class="mb-2">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" formControlName="password">
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label">Sick Leave</label>
+                                <input type="number" class="form-control" formControlName="sickLeaveBalance">
+                            </div>
+                            <div class="col">
+                                <label class="form-label">Paid Leave</label>
+                                <input type="number" class="form-control" formControlName="paidLeaveBalance">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 mt-2">
+                            <label class="form-label">Role</label>
+                            <input type="text" class="form-control" formControlName="role">
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-success" (click)="createEmployee()">Create</button>
+                            <button class="btn btn-primary" (click)="updateEmployee()">Update</button>
+                            <button class="btn btn-secondary" (click)="clearForm()">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 import { Aboutme } from './aboutme/aboutme';
+import { Home } from './home/home';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'About', pathMatch: 'full' },
+    { path: '', redirectTo: 'Home', pathMatch: 'full' },
     //Anger loading the component directly
-    { path: 'About', component: Aboutme },
-
+    { path: 'Home', component:  Home },
     //using loadComponent for lazy loading
     {
         path: 'Projects', loadComponent: () => import('./projects/projects').then(m => m.Projects),
@@ -15,7 +15,7 @@ export const routes: Routes = [
     //using loadComponent for lazy loading
     { path: 'Skills', loadComponent: () => import('./skills/skills').then(m => m.Skills) },
     { path: 'Contact', loadComponent: () => import('./contact/contact').then(m => m.Contact) },
-
+    { path: 'About', loadComponent: () => import('./aboutme/aboutme').then(m => m.Aboutme) },
     //Miscellaneous Section
     {
         path: 'Miscellaneous', loadComponent: () => import('./miscellaneous/miscellaneous').then(m => m.Miscellaneous),

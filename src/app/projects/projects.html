@@ -1,39 +1,42 @@
-<h4>Projects</h4>
-<hr>
+<!-- Side Navigation -->
+<div class="container-fluid row">
 
-<div class="row">
-    <div class="col-3">
-        <ul>
-            <li><a routerLink="FindVowels" aria-current="page" href="#">
-                    Find a vowel in last of a word<span class="badge blinkNew">New</span></a>
-            </li>
-        </ul>
-    </div>
-    <div class="col-4">
-        <ul>
-            <li><a routerLink="Convertor" aria-current="page" href="#">
-                    Convert Miles to Kilometers <span class="badge blinkNew">New</span></a>
-            </li>
-        </ul>
-    </div>
-    <div class="col-4">
-        <ul>
-            <li><a routerLink="BasicMath" aria-current="page" href="#">
-                    Basic Math <span class="badge blinkNew">New</span></a>
-            </li>
-        </ul>
-    </div>
     
+        <div class="row">
+            <div class="col-4">
+                <ul>
+                    <li><a routerLink="LeaveTracker" aria-current="page" href="#">
+                            Leave Tracker<span class="badge blinkNew">New</span></a>
+                    </li>
+                </ul>
+                <ul>
+                    <li><a routerLink="FindVowels" aria-current="page" href="#">
+                            Find a vowel in last of a word</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <ul>
+                    <li><a routerLink="Convertor" aria-current="page" href="#">
+                            Convert Miles to Kilometers <span class="badge blinkNew">New</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-4">
+                <ul>
+                    <li><a routerLink="BasicMath" aria-current="page" href="#">
+                            Basic Math <span class="badge blinkNew">New</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+  
+
 </div>
-<hr>
-<!-- <h1>Number Calculator</h1>
-            <input type="text" id="num1" placeholder="Enter first number">
-            <input type="text" id="num2" placeholder="Enter second number"><br>
-            <button onclick="addNumbers()">Add Numbers</button>
-            <button onclick="multipleNumbers()">Multiple Numbers</button>
-            <button onclick="devideNumbers()">Devide Numbers</button> -->
+
 
 <!-- Projects Content -->
-<div class="projectsList">
+<div class="container-fluid projectsList card bg-yellow">
     <router-outlet />
 </div>

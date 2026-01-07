@@ -1,0 +1,6 @@
+{
+  "/api": {
+    "target": "https://api.freeprojectapi.com/api/LeaveTracker/CreateEmployee",
+    "secure": false
+  }
+}
