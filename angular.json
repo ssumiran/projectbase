@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "mypage": {
+    "projectbase": {
       "projectType": "application",
       "schematics": {},
       "root": "",
