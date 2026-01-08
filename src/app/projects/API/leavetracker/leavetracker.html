@@ -1,15 +1,19 @@
 <div>
-
-
-    <div class="container-fluid row">
-        <div>
-            <a routerLink="Dashboard" class="btn btn-primary btn-sm" aria-current="page" href="#">
-                Dashboard
-            </a>
-            <a routerLink="Employees" class="btn btn-primary btn-sm" aria-current="page" href="#">
-                All Employees
-            </a>
+    <div class="container-fluid row  bg-light d-flex justify-content-center align-items-center">
+        <h2 class="text-center text-primary fw-bold">Leave Management System</h2>
+        <div class="col-md-4 d-flex justify-content-center">
+            <div>
+                <a routerLink="Dashboard" class="btn btn-primary btn-sm" aria-current="page" href="#">
+                    Dashboard
+                </a>
+            </div>
+            <div class="mx-2">
+                <a routerLink="Employees" class="btn btn-primary btn-sm" aria-current="page" href="#">
+                    All Employees
+                </a>
+            </div>
         </div>
     </div>
+
     <router-outlet />
 </div>
