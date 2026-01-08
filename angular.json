@@ -54,16 +54,16 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "options": {            
-            "port": 5100
+          "options": {
+            "port": 4200
           },
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "mypage:build:production"
+              "buildTarget": "projectbase:build:production"
             },
             "development": {
-              "buildTarget": "mypage:build:development"
+              "buildTarget": "projectbase:build:development"
             }
           },
           "defaultConfiguration": "development"
