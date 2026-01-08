@@ -1,7 +1,5 @@
 {
-  "/**": {
-    "target": "http://localhost:5100",
-    "secure": true,
+    "target": "https://freeprojectapi.com/",
     "changeOrigin": true,
     "logLevel": "debug"
   }
