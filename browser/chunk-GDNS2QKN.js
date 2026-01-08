@@ -1,0 +1,1 @@
+import{Qa as o,Ra as a,Xa as i,ya as n}from"./chunk-ARARROEB.js";import"./chunk-2NFLSA4Y.js";var p=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["app-pagenotfound"]],decls:2,vars:0,template:function(e,s){e&1&&(o(0,"h4"),i(1,"Page Not Found"),a())},encapsulation:2})};export{p as Pagenotfound};
