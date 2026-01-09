@@ -1,0 +1,102 @@
+<div class="container-fluid mt-4">
+    <div class="row">
+
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header text-white animated-header">
+                    <h5 class="mb-0">Leave Records</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th hidden>Leave ID</th>
+                                    <th>Emp ID</th>
+                                    <th>Name</th>
+                                    <th>Type</th>
+                                    <th>From Data</th>
+                                    <th>To Date</th>
+                                    <th>Reason</th>
+                                    <!-- <th>Actions</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (l of leaveReqList(); track l.leaveRequest.leaveId) {
+                                <tr class="align-middle">
+                                    <td hidden>{{ l.leaveRequest.leaveId }}</td>
+                                    <td>{{ l.leaveRequest.empId }}</td>
+                                    <td>{{ l.contact.empName }}</td>
+                                    <td>{{ l.leaveRequest.leaveType }}</td>
+                                    <td>{{ l.leaveRequest.fromDate | date:'yyyy-MM-dd' }}</td>
+                                    <td>{{ l.leaveRequest.toDate | date:'yyyy-MM-dd' }}</td>
+                                    <td>{{ l.leaveRequest.reason }}</td>
+                                    <!-- <td>
+                                        <button class="btn btn-sm btn-outline-warning me-1" (click)="editLeaveRequest(l)">Edit</button>
+                                        <button class="btn btn-sm btn-outline-danger" (click)="deleteLeaveRequest(l)">Delete</button>
+                                    </td> -->
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow">
+                <div class="card-header text-white animated-header">
+                    <h5 class="mb-0">Create Leave Request</h5>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="leaveReqFormGrp">
+                        <div class="mb-3">
+                            <label class="form-label">Employee ID</label>
+                            <input type="number" class="form-control" formControlName="empId">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Employee Name</label>
+                            <input type="text" class="form-control" formControlName="empName">
+                        </div>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label class="form-label">From Date</label>
+                                <input type="date" class="form-control" formControlName="fromDate">
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label class="form-label">To Date</label>
+                                <input type="date" class="form-control" formControlName="toDate">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <label class="form-label">From Date</label>
+                                <input type="date" class="form-control" formControlName="fromDate">
+                            </div>
+                            <div class="col-6 mb-3">
+                                <label class="form-label">Leave Type</label>
+                                <select class="form-select" formControlName="leaveType"
+                                    aria-placeholder="Select Leave Type">
+                                    <option value="paidLeave">Paid Leave</option>
+                                    <option value="sickLeave">Sick Leave</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Reason</label>
+                            <textarea class="form-control" rows="3" formControlName="reason"></textarea>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary btn-animate" type="button"
+                                (click)="createLeaveRequest()">Submit Request</button>
+                            <button class="btn btn-secondary" type="reset" (click)="resetForm()">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

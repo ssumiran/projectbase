@@ -14,8 +14,8 @@ export class Leavetracker implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void { debugger; 
-    this.navigateToDashboard();
+  ngOnInit(): void { 
+    this.navigateToLeaveBalance();
   }
 
   navigateToEmployees() {
@@ -24,5 +24,13 @@ export class Leavetracker implements OnInit {
 
   navigateToDashboard() {
     this.routeToPage.navigate(['/Projects/LeaveTracker/Dashboard']);
+  }
+
+  navigateToLeaveBalance() {
+    this.routeToPage.navigate(['/Projects/LeaveTracker/LeaveBalance']);
+  }
+
+  navigateToLeaveRequest() {
+    this.routeToPage.navigate(['/Projects/LeaveTracker/LeaveRequest']);
   }
 }

@@ -1,0 +1,137 @@
+<div class="container-fluid mt-4">
+  <div class="row">
+
+    <div class="col-md-8">
+      <div class="card shadow-sm">
+        <div class="card-header animated-header">
+          <h5 class="mb-0"><i class="bi bi-table me-2"></i>Leave Balance Records</h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th hidden>Balance ID</th>
+                  <th>Emp ID</th>
+                  <th>Name</th>
+                  <th>Leave Type</th>
+                  <th>Count</th>
+                  <th>Contact</th>
+                  <th>Updated Date</th>
+                  <th>Updated By</th>
+                  <th class="text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for( b of leaveBalList(); track b.leaveBalance.balanceId ){
+                <tr>
+                  <td >{{b.leaveBalance.balanceId}}</td>
+                  <td>{{b.leaveBalance.empId}}</td>
+                  <td>{{b.contact.empName}}</td>
+                  <td>{{b.leaveBalance.leaveType}}</td>
+                  <td>{{b.leaveBalance.count}}</td>
+                  <td>{{b.contact.contactNo}}</td>
+                  <td>{{b.leaveBalance.updatedDate | date:"yyyy-MM-dd"}}</td>
+                  <td>{{b.leaveBalance.updateBy}}</td>
+                  <td class="text-center">
+                    <button class="btn btn-sm btn-outline-danger"
+                      (click)="deleteLeaveBalance(b.leaveBalance.balanceId)">Delete</button>
+                  </td>
+                </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow-sm">
+        <div class="card-header animated-header">
+          <h5 class="mb-0"><i class="bi bi-pencil-square me-2"></i>Search Single/All Leave Balance</h5>
+        </div>
+        <div class="card-body">
+          
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label class="form-label small fw-bold">Employee ID</label>
+              </div>
+              <div class="col-md-8 mb-3">
+                <input type="number" class="form-control" [(ngModel)]="empIdSignal" placeholder="Enter Employee ID">
+                
+                @if(invalidMsg() !== '') {
+                <div class="text-danger small mt-1">{{invalidMsg()}}</div>
+                }
+              </div>
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-secondary btn-sm" 
+                (click)="getBalanceByEmpId()"> View Single Employee
+              </button>
+
+              <button type="submit" class="btn btn-primary btn-animate btn-sm" 
+                (click)="getAllLeaveBalances()"> View All Employees
+              </button>
+            </div>
+          
+        </div>
+      </div>
+
+      <br>
+
+      <div class="card shadow-sm">
+        <div class="card-header animated-header">
+          <h5 class="mb-0"><i class="bi bi-pencil-square me-2"></i>Create Leave Balance</h5>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="leaveBalFormGrp()">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold">Emp ID</label>
+                <input type="number" class="form-control" formControlName="empId">
+              </div>
+              @if(showBalId()) {}
+              <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold">Balance Id</label>
+                <input type="number" class="form-control" formControlName="balanceId" readonly>
+              </div>
+              
+            </div>
+
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold">Leave Count</label>
+                <input type="number" class="form-control" formControlName="count">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold">Leave Type</label>
+                <select class="form-select" formControlName="leaveType">
+                  <option value="paidLeave">Paid Leave</option>
+                  <option value="sickLeave">Sick Leave</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold">Updated Date</label>
+                <input type="date" class="form-control" formControlName="updatedDate">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label small fw-bold">updated By</label>
+                <input type="number" class="form-control" formControlName="updateBy">
+              </div>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary btn-animate btn-sm" (click)="addLeaveBalance()">Create Leave</button>
+              <button type="reset" class="btn btn-light btn-sm" (click)="clearForm()">Clear</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

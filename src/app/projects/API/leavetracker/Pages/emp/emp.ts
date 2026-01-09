@@ -57,7 +57,7 @@ export class Emp implements OnInit {
     );
   };
 
-  getEmployeeById(empId: number) {
+  editEmployeeById(empId: number) {
     debugger;
     
     this.setShowEmpId(empId);
