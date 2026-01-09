@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { Emp } from './Pages/emp/emp';
 
@@ -11,19 +11,18 @@ import { Emp } from './Pages/emp/emp';
 export class Leavetracker implements OnInit {
   routeToPage = inject(Router);
 
-
   constructor() { }
 
-  ngOnInit(): void { 
-    this.navigateToLeaveBalance();
+  ngOnInit(): void {
+    this.navigateToDashboard()
   }
-
-  navigateToEmployees() {
-    this.routeToPage.navigate(['/Projects/LeaveTracker/Employees']);
-  }
-
   navigateToDashboard() {
     this.routeToPage.navigate(['/Projects/LeaveTracker/Dashboard']);
+  }
+
+  /*
+  navigateToEmployees() {
+    this.routeToPage.navigate(['/Projects/LeaveTracker/Employees']);
   }
 
   navigateToLeaveBalance() {
@@ -33,4 +32,5 @@ export class Leavetracker implements OnInit {
   navigateToLeaveRequest() {
     this.routeToPage.navigate(['/Projects/LeaveTracker/LeaveRequest']);
   }
+  */
 }

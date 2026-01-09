@@ -3,7 +3,7 @@
 
     <div class="col-md-8">
       <div class="card shadow-sm">
-        <div class="card-header animated-header">
+        <div class="card-header animated-header  text-center">
           <h5 class="mb-0"><i class="bi bi-table me-2"></i>Leave Balance Records</h5>
         </div>
         <div class="card-body">
@@ -25,7 +25,7 @@
               <tbody>
                 @for( b of leaveBalList(); track b.leaveBalance.balanceId ){
                 <tr>
-                  <td >{{b.leaveBalance.balanceId}}</td>
+                  <td hidden>{{b.leaveBalance.balanceId}}</td>
                   <td>{{b.leaveBalance.empId}}</td>
                   <td>{{b.contact.empName}}</td>
                   <td>{{b.leaveBalance.leaveType}}</td>
