@@ -1,14 +1,10 @@
-
-
-
-
 :root {
-            --nav-bg: #611d1d;
-            --text: #0e0c0c;
-            --accent: #e67e22;
-        }
+    --nav-bg: #611d1d;
+    --text: #0e0c0c;
+    --accent: #e67e22;
+}
 
-        
+
 .header {
     width: 100%;
     height: 60px;
@@ -19,60 +15,103 @@
     padding: 0 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-        .navbar {
-            background: var(--nav-bg);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-        }
 
-        .logo { color: rgb(255, 255, 255); font-weight: bold; font-size: 1.5rem; text-decoration: none; }
+.navbar {
+    background: var(--nav-bg);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
 
-        
+.logo {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
 
-        /* Nav Links */
-        .nav-links {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 20px;
-        }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
 
-        .nav-links a:hover { color: var(--accent); }
+/* Nav Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
 
-        /* --- MOBILE RESPONSIVE LOGIC --- */
-        @media (max-width: 768px) {
-            .hamburger { display: flex; } /* Show hamburger */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
 
-            .nav-links {
-                display: none; /* Hide menu by default on mobile */
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #222;
-                padding: 20px 0;
-                text-align: center;
-                z-index: 100;
-            }
+.nav-links a:hover {
+    color: var(--accent);
+}
 
-            /* When checkbox is checked, show the menu */
-            #menu-toggle:checked ~ .nav-links {
-                display: flex;
-            }
+/* --- MOBILE RESPONSIVE LOGIC --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
 
-            /* Animation for hamburger to X */
-            #menu-toggle:checked ~ .hamburger span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-            #menu-toggle:checked ~ .hamburger span:nth-child(2) { opacity: 0; }
-            #menu-toggle:checked ~ .hamburger span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-        }
+    /* Show hamburger */
+
+    .nav-links {
+        display: none;
+        /* Hide menu by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #222;
+        padding: 20px 0;
+        text-align: center;
+        z-index: 100;
+    }
+
+    /* When checkbox is checked, show the menu */
+    #menu-toggle:checked~.nav-links {
+        display: flex;
+    }
+
+    /* Animation for hamburger to X */
+    #menu-toggle:checked~.hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #menu-toggle:checked~.hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked~.hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+
+.appContainerCSS {
+    height: 100vh;
+    background: linear-gradient(270deg, #ff6b6b, #48dbfb, #1dd1a1);
+    background-size: 600% 600%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
