@@ -1,0 +1,1 @@
+import"./chunk-2NFLSA4Y.js";var t=[{path:"music",loadComponent:()=>import("./chunk-YHICS7MQ.js").then(o=>o.Music)},{path:"CarriRichardson",loadComponent:()=>import("./chunk-LUASKQ4V.js").then(o=>o.Carririchardson)}];export{t as miscRoutes};
