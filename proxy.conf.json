@@ -1,5 +1,7 @@
 {
+  "/api": {
     "target": "https://freeprojectapi.com/",
+    "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
   }
